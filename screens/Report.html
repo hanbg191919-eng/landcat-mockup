@@ -1,0 +1,125 @@
+<!doctype html><html><head><meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: 'Gothic A1', 'Apple SD Gothic Neo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    a { color: #12243D; text-decoration: none; }
+    a:hover { color: #0B1930; }
+  </style>
+<style>html,body{margin:0;padding:0;background:#fff}</style></head><body><div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #FFFFFF;">
+
+  <!-- 뒤에 깔린 고양이 프로필 화면. 시트가 올라온 상태라 흐리게 처리했다. 상단 44px는 기기 상태바 자리라 비운다. -->
+  <div style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; filter: blur(6px); background: #FFFFFF;">
+    <div style="position: absolute; left: 0; right: 0; top: 44px; height: 56px; background: #12243D; display: flex; align-items: center; padding: 0 6px;">
+      <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>
+      </div>
+      
+    </div>
+    <div style="position: absolute; left: 0; right: 0; top: 100px; height: 262px; background: #DDE1E4; display: flex; align-items: center; justify-content: center;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10.5L4 4l4.5 3.2a9 9 0 0 1 7 0L20 4l-1 6.5a7 7 0 1 1-14 0z"></path><path d="M9.5 12h.01M14.5 12h.01"></path></svg>
+    </div>
+    <div style="position: absolute; left: 0; right: 0; top: 362px; padding: 20px; display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 22px; font-weight: 800; color: #1A1D21; letter-spacing: -0.5px;">치즈</span>
+      <span style="font-size: 14px; color: #6E7781;">치즈태비 · 사람을 잘 따라요</span>
+      <span style="font-size: 13px; color: #9AA1A9;">돌담길 화단 · 2시간 전 목격</span>
+    </div>
+  </div>
+
+  <!-- 시트에 시선을 모으기 위한 남색 반투명 오버레이 -->
+  <div style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgba(18, 36, 61, 0.6);"></div>
+
+  <!-- 하단 시트 669px = 손잡이 24 + 제목 74 + 구분선 1 + 사유 280 + 상세 122 + 유의 76 + 버튼 92 -->
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 669px; background: #FFFFFF; border-radius: 8px 8px 0 0; box-shadow: 0 -2px 12px rgba(18, 36, 61, 0.08); display: flex; flex-direction: column; overflow: hidden;">
+
+    <div style="height: 24px; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 36px; height: 4px; border-radius: 2px; background: #DDE1E4;"></div>
+    </div>
+
+    <!-- 제목과 신고 대상. 대상은 랜드마크 번호판 배지로 한 번만 노랑을 쓴다. -->
+    <div style="padding: 0 20px 16px; display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 22px; font-weight: 800; color: #1A1D21; letter-spacing: -0.5px; line-height: 28px;">이 게시물 신고</span>
+      <div style="display: flex; align-items: center; gap: 8px; height: 22px;">
+        <div style="height: 22px; border-radius: 4px; background: #FFC800; padding: 0 8px; display: flex; align-items: center; gap: 4px;">
+          <span style="font-size: 11px; font-weight: 700; color: #12243D;">랜드마크</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: #12243D;">12</span>
+        </div>
+        <span style="font-size: 13px; color: #6E7781;">치즈 · 등록자 냥냥이</span>
+      </div>
+    </div>
+
+    <div style="height: 1px; background: #EEF0F2;"></div>
+
+    <!-- 신고 사유 단일 선택. 어미를 전부 '-ㅁ' 서술형으로 맞췄고 부가 설명은 5개 모두 넣었다. -->
+    <div style="display: flex; flex-direction: column;">
+
+      <div style="height: 56px; padding: 0 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #EEF0F2; background: #F7F8F9;">
+        <div style="width: 22px; height: 22px; border-radius: 11px; border: 2px solid #12243D; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+          <div style="width: 10px; height: 10px; border-radius: 5px; background: #12243D;"></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <span style="font-size: 15px; font-weight: 700; color: #12243D; letter-spacing: -0.2px; line-height: 20px;">고양이 사진이 아님</span>
+          <span style="font-size: 12px; color: #6E7781; line-height: 16px;">다른 동물이나 사물, 무관한 사진</span>
+        </div>
+      </div>
+
+      <div style="height: 56px; padding: 0 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #EEF0F2; background: #FFFFFF;">
+        <div style="width: 22px; height: 22px; border-radius: 11px; border: 2px solid #DDE1E4; flex-shrink: 0;"></div>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <span style="font-size: 15px; font-weight: 700; color: #1A1D21; letter-spacing: -0.2px; line-height: 20px;">학대나 위협이 의심됨</span>
+          <span style="font-size: 12px; color: #6E7781; line-height: 16px;">폭력, 위협, 유기 정황</span>
+        </div>
+      </div>
+
+      <div style="height: 56px; padding: 0 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #EEF0F2; background: #FFFFFF;">
+        <div style="width: 22px; height: 22px; border-radius: 11px; border: 2px solid #DDE1E4; flex-shrink: 0;"></div>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <span style="font-size: 15px; font-weight: 700; color: #1A1D21; letter-spacing: -0.2px; line-height: 20px;">위치 정보가 잘못됨</span>
+          <span style="font-size: 12px; color: #6E7781; line-height: 16px;">실제 목격 장소와 다른 위치</span>
+        </div>
+      </div>
+
+      <div style="height: 56px; padding: 0 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #EEF0F2; background: #FFFFFF;">
+        <div style="width: 22px; height: 22px; border-radius: 11px; border: 2px solid #DDE1E4; flex-shrink: 0;"></div>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <span style="font-size: 15px; font-weight: 700; color: #1A1D21; letter-spacing: -0.2px; line-height: 20px;">개인정보가 노출됨</span>
+          <span style="font-size: 12px; color: #6E7781; line-height: 16px;">주소, 차량 번호, 얼굴</span>
+        </div>
+      </div>
+
+      <div style="height: 56px; padding: 0 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #EEF0F2; background: #FFFFFF;">
+        <div style="width: 22px; height: 22px; border-radius: 11px; border: 2px solid #DDE1E4; flex-shrink: 0;"></div>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <span style="font-size: 15px; font-weight: 700; color: #1A1D21; letter-spacing: -0.2px; line-height: 20px;">스팸이거나 홍보로 보임</span>
+          <span style="font-size: 12px; color: #6E7781; line-height: 16px;">광고, 반복 게시물</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 상세 내용은 선택 항목이라 사유 목록보다 작게 잡았다. -->
+    <div style="padding: 20px 20px 0; display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 13px; font-weight: 700; color: #1A1D21; line-height: 18px;">상세 내용 (선택)</span>
+      <div style="height: 76px; border: 1px solid #DDE1E4; border-radius: 8px; padding: 12px 14px; background: #FFFFFF;">
+        <span style="font-size: 14px; color: #9AA1A9; line-height: 1.5;">검토에 도움이 될 내용을 적어주세요</span>
+      </div>
+    </div>
+
+    <div style="padding: 16px 20px 0;">
+      <div style="background: #F7F8F9; border-radius: 8px; padding: 12px 14px;">
+        <span style="display: block; font-size: 12px; color: #6E7781; line-height: 1.5;">신고는 익명으로 접수돼요. 허위 신고가 반복되면 신고 기능이 제한될 수 있어요.</span>
+      </div>
+    </div>
+
+    <!-- 하단 세이프에어리어 24px. 주 동작인 신고 접수를 두 배 넓게 뒀다. -->
+    <div style="padding: 16px 20px 24px; display: flex; gap: 12px;">
+      <div style="width: 110px; height: 52px; border: 1px solid #12243D; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 15px; font-weight: 700; color: #12243D;">취소</span>
+      </div>
+      <div style="flex-grow: 1; height: 52px; background: #12243D; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 15px; font-weight: 800; color: #FFFFFF;">신고 접수</span>
+      </div>
+    </div>
+
+  </div>
+</div></body></html>

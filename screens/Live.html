@@ -1,0 +1,131 @@
+<!doctype html><html><head><meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: 'Gothic A1', 'Apple SD Gothic Neo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    a { color: #12243D; text-decoration: none; }
+    a:hover { color: #0B1930; }
+  </style>
+<style>html,body{margin:0;padding:0;background:#fff}</style></head><body><!-- 어두운 화면. 바탕은 브랜드 남색 #12243D를 어둡게 내린 톤만 쓴다. -->
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #0B1930;">
+
+  <!-- 영상 영역 440px. 상단 44px는 기기 상태바 자리라 비운다. -->
+  <div style="position: absolute; left: 0; right: 0; top: 0; height: 440px; background: #0B1930; overflow: hidden;">
+    <svg width="390" height="440" viewBox="0 0 390 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+      <rect width="390" height="440" fill="#0B1930"></rect>
+      <rect y="304" width="390" height="136" fill="#12243D"></rect>
+      <rect x="24" y="272" width="104" height="46" rx="4" fill="#1E3557"></rect>
+      <path d="M195 152c-29 0-49 19-49 44s20 44 49 44 49-19 49-44-20-44-49-44z" fill="#1E3557"></path>
+      <path d="M152 162l-8-42 32 20z" fill="#1E3557"></path>
+      <path d="M238 162l8-42-32 20z" fill="#1E3557"></path>
+      <path d="M156 236c-14 18-22 41-22 74h122c0-33-8-56-22-74z" fill="#1E3557"></path>
+      <path d="M254 302c24-4 39-19 41-37" stroke="#1E3557" stroke-width="13" stroke-linecap="round"></path>
+    </svg>
+
+    <!-- 영상 위 상단 조작 줄 56px. 노랑은 이 LIVE 배지 한 곳에만 쓴다. -->
+    <div style="position: absolute; left: 0; right: 0; top: 44px; height: 56px; padding: 0 6px; display: flex; align-items: center; gap: 8px;">
+      <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>
+      </div>
+      <div style="height: 24px; border-radius: 4px; background: #FFC800; padding: 0 8px; display: flex; align-items: center; gap: 5px; flex-shrink: 0;">
+        <div style="width: 6px; height: 6px; border-radius: 3px; background: #12243D;"></div>
+        <span style="font-size: 11px; font-weight: 700; color: #12243D; letter-spacing: 0.4px;">LIVE</span>
+      </div>
+      <div style="height: 24px; border-radius: 4px; background: rgba(11, 22, 38, 0.55); padding: 0 8px; display: flex; align-items: center; flex-shrink: 0;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: #FFFFFF;">142</span><span style="font-size: 12px; color: #C3CDD9;">명</span>
+      </div>
+      <div style="flex-grow: 1;"></div>
+      <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4"></path><path d="M6 4.5h12l-2.2 4L18 12.5H6z"></path></svg>
+      </div>
+    </div>
+
+    <!-- 방송 제목은 영상 아래쪽에 얹는다. 위쪽 그라데이션으로 실루엣과 겹쳐도 읽히게 했다. -->
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 20px 16px; display: flex; flex-direction: column; gap: 4px; background: linear-gradient(to top, rgba(11, 22, 38, 0.92), rgba(11, 22, 38, 0));">
+      <span style="font-size: 17px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.3px; line-height: 22px;">돌담길 화단 급식소, 저녁 손님들</span>
+      <span style="font-size: 13px; color: #A9B6C6; line-height: 18px;">냥냥이 · 랜드마크 12</span>
+    </div>
+  </div>
+
+  <!-- 채팅 영역 324px (내용 304 + 아래 여백 20). 영상 440 + 324 + 입력바 80 = 844 -->
+  <div style="position: absolute; left: 0; right: 0; top: 440px; bottom: 80px; border-top: 1px solid #1E3557; padding: 16px 20px 0; overflow: hidden; display: flex; flex-direction: column; gap: 14px;">
+
+    <div style="height: 22px; flex-shrink: 0; display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 17px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.3px;">실시간 채팅</span>
+      <div style="flex-grow: 1;"></div>
+      <span style="font-size: 11px; color: #7488A0;">급식소 위치는 공유하지 말아주세요</span>
+    </div>
+
+    <!-- 채팅 3줄. 마지막 줄은 방송자가 종료를 예고하는 흐름이다. -->
+    <div style="flex-shrink: 0; display: flex; flex-direction: column; gap: 10px;">
+      <div style="height: 20px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 13px; font-weight: 700; color: #8FA8C6; flex-shrink: 0;">골목대장</span>
+        <span style="font-size: 13px; color: #C3CDD9;">치즈 지금 왼쪽에서 걸어와요</span>
+      </div>
+      <div style="height: 20px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 13px; font-weight: 700; color: #8FA8C6; flex-shrink: 0;">삼색이집사</span>
+        <span style="font-size: 13px; color: #C3CDD9;">오늘 셋 다 나왔네요</span>
+      </div>
+      <div style="height: 20px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 13px; font-weight: 700; color: #FFFFFF; flex-shrink: 0;">냥냥이</span>
+        <span style="font-size: 13px; color: #C3CDD9;">10분 뒤에 정리하고 방송 끌게요</span>
+      </div>
+    </div>
+
+    <div style="height: 1px; background: #1E3557; flex-shrink: 0;"></div>
+
+    <!-- 다른 라이브는 부수 정보라 썸네일과 글자를 작게 눌렀다. 번호판은 남색으로 두고 노랑을 늘리지 않았다. -->
+    <div style="flex-shrink: 0; display: flex; flex-direction: column; gap: 12px;">
+      <span style="font-size: 15px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.2px; line-height: 20px;">다른 라이브</span>
+      <div style="display: flex; gap: 12px;">
+
+        <div style="width: 169px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="height: 64px; border-radius: 8px; background: #0B1930; border: 1px solid #1E3557; position: relative; overflow: hidden;">
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3E5578" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V4.6l4.2 2.9a8 8 0 0 1 7.6 0L20 4.6V10a8 8 0 0 1-16 0z"></path><path d="M9.2 11.6v.8"></path><path d="M14.8 11.6v.8"></path><path d="M12 14.4 10.5 15.4"></path><path d="M12 14.4 13.5 15.4"></path></svg></div>
+            <div style="position: absolute; top: 8px; left: 8px; height: 20px; border-radius: 4px; background: #12243D; padding: 0 6px; display: flex; align-items: center; gap: 4px;">
+              <span style="font-size: 11px; font-weight: 700; color: #FFFFFF;">랜드마크</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; color: #FFFFFF;">8</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 13px; font-weight: 700; color: #FFFFFF; line-height: 18px;">공원 벤치 삼남매</span>
+            <div style="height: 16px; display: flex; align-items: center; gap: 5px;">
+              <div style="width: 6px; height: 6px; border-radius: 3px; background: #FFFFFF;"></div>
+              <span style="font-size: 11px; color: #7488A0;">방송 중</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="width: 169px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="height: 64px; border-radius: 8px; background: #0B1930; border: 1px solid #1E3557; position: relative; overflow: hidden;">
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3E5578" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V4.6l4.2 2.9a8 8 0 0 1 7.6 0L20 4.6V10a8 8 0 0 1-16 0z"></path><path d="M9.2 11.6v.8"></path><path d="M14.8 11.6v.8"></path><path d="M12 14.4 10.5 15.4"></path><path d="M12 14.4 13.5 15.4"></path></svg></div>
+            <div style="position: absolute; top: 8px; left: 8px; height: 20px; border-radius: 4px; background: #12243D; padding: 0 6px; display: flex; align-items: center; gap: 4px;">
+              <span style="font-size: 11px; font-weight: 700; color: #FFFFFF;">랜드마크</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; color: #FFFFFF;">17</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 13px; font-weight: 700; color: #FFFFFF; line-height: 18px;">성북천 다리 밑</span>
+            <div style="height: 16px; display: flex; align-items: center; gap: 5px;">
+              <div style="width: 6px; height: 6px; border-radius: 3px; background: #FFFFFF;"></div>
+              <span style="font-size: 11px; color: #7488A0;">방송 중</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 하단 고정 채팅 입력 바 80px = 위 12 + 입력 44 + 세이프에어리어 24 -->
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 80px; background: #0B1930; border-top: 1px solid #1E3557; padding: 12px 20px 24px; display: flex; align-items: center; gap: 12px;">
+    <div style="flex-grow: 1; height: 44px; border: 1px solid #1E3557; border-radius: 8px; background: #0B1930; padding: 0 14px; display: flex; align-items: center;">
+      <span style="font-size: 14px; color: #7488A0;">채팅을 입력해 주세요</span>
+    </div>
+    <div style="width: 44px; height: 44px; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#12243D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L3 10.5l7.5 3L14 21z"></path></svg>
+    </div>
+  </div>
+
+</div></body></html>

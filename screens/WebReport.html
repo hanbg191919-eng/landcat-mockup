@@ -1,0 +1,302 @@
+<!doctype html><html><head><meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: 'Gothic A1', 'Apple SD Gothic Neo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    a { color: #12243D; text-decoration: none; }
+    a:hover { color: #0B1930; }
+  </style>
+<style>html,body{margin:0;padding:0;background:#fff}</style></head><body><div style="width: 1440px; height: 900px; position: relative; overflow: hidden; background: #FFFFFF;">
+
+  <!-- 글로벌 헤더: WebHome과 같은 것. 프로필은 지도에서 들어오므로 '지도'를 활성으로 둔다 -->
+  <div style="position: absolute; left: 0; right: 0; top: 0; height: 64px; background: #12243D; display: flex; align-items: center; gap: 32px; padding: 0 32px;">
+    <span style="font-size: 15px; font-weight: 800; letter-spacing: 2px; color: #FFC800; flex-shrink: 0;">LANDCAT</span>
+    <div style="display: flex; align-items: center; gap: 4px;">
+      <span style="height: 36px; padding: 0 14px; border-radius: 8px; background: rgba(255,255,255,0.10); font-size: 14px; font-weight: 700; line-height: 36px; color: #FFFFFF;">지도</span>
+      <span style="height: 36px; padding: 0 14px; font-size: 14px; font-weight: 500; line-height: 36px; color: #C3CDD9;">라이브</span>
+      <span style="height: 36px; padding: 0 14px; font-size: 14px; font-weight: 500; line-height: 36px; color: #C3CDD9;">커뮤니티</span>
+    </div>
+    <div style="flex: 1; max-width: 420px; height: 40px; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center; gap: 8px; padding: 0 14px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.6"/><path d="M16.2 16.2 20.5 20.5"/></svg>
+      <span style="font-size: 14px; color: #9AA1A9;">장소나 고양이 이름 검색</span>
+    </div>
+    <div style="flex: 1;"></div>
+    <div style="height: 40px; padding: 0 16px; border-radius: 8px; background: #FFC800; display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12243D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.4h3.2l1.4-2.2h6.8l1.4 2.2H20v10.2H4z"/><circle cx="12" cy="13.2" r="3.2"/></svg>
+      <span style="font-size: 14px; font-weight: 700; color: #12243D;">고양이 등록</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
+      <div style="width: 32px; height: 32px; border-radius: 8px; background: #DDE1E4;"></div>
+      <span style="font-size: 14px; font-weight: 600; color: #FFFFFF;">냥냥이</span>
+    </div>
+  </div>
+
+  <!-- 좌측 사진 열: 앱에서는 사진 아래로 스크롤했지만 웹은 사진을 붙잡아 두고 정보를 옆으로 보낸다.
+       바닥을 회색으로 깔아 사진 뷰어처럼 읽히게 했다 -->
+  <div style="position: absolute; left: 0; top: 64px; bottom: 0; width: 920px; background: #F7F8F9; padding: 24px 32px; display: flex; flex-direction: column; gap: 0;">
+
+    <!-- 되돌아갈 곳을 알려주는 줄. 헤더가 있으니 별도 상단바를 만들지 않았다 -->
+    <div style="height: 40px; display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
+      <div style="width: 40px; height: 40px; border: 1px solid #EEF0F2; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1D21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5 8 12l6.5 7"/></svg>
+      </div>
+      <span style="font-size: 14px; font-weight: 600; color: #6E7781;">돌담길 화단</span>
+      <div style="flex: 1;"></div>
+      <span style="font-size: 13px; color: #9AA1A9;">사진 4장</span>
+    </div>
+
+    <div style="height: 16px; flex-shrink: 0;"></div>
+
+    <!-- 대표 사진. 실물이 없으니 회색 블록에 라인 아이콘만 -->
+    <div style="width: 856px; height: 560px; border-radius: 8px; background: #DDE1E4; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.8 10.4V4.6l4.6 3.2"></path>
+        <path d="M19.2 10.4V4.6l-4.6 3.2"></path>
+        <path d="M4.8 10.4c0-2.1 3.2-3.6 7.2-3.6s7.2 1.5 7.2 3.6v2.8c0 4-3.2 6.9-7.2 6.9s-7.2-2.9-7.2-6.9z"></path>
+        <path d="M9.4 12.4v.9"></path>
+        <path d="M14.6 12.4v.9"></path>
+        <path d="M10.9 15.6c.6.7 1.6.7 2.2 0"></path>
+        <path d="M1.8 12.9h2.6"></path>
+        <path d="M2.3 15.6l2.2-.7"></path>
+        <path d="M22.2 12.9h-2.6"></path>
+        <path d="M21.7 15.6l-2.2-.7"></path>
+      </svg>
+    </div>
+
+    <div style="height: 12px; flex-shrink: 0;"></div>
+
+    <!-- 썸네일 4칸. 1번째가 선택 상태라 남색 2px 테두리 -->
+    <div style="display: flex; gap: 12px; flex-shrink: 0;">
+      <div style="width: 205px; height: 132px; border-radius: 8px; background: #DDE1E4; border: 2px solid #12243D; display: flex; align-items: center; justify-content: center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V4.6l4.2 2.9a8 8 0 0 1 7.6 0L20 4.6V10a8 8 0 0 1-16 0z"/><path d="M9.2 11.6v.8"/><path d="M14.8 11.6v.8"/><path d="M12 14.4 10.5 15.4"/><path d="M12 14.4 13.5 15.4"/></svg>
+      </div>
+      <div style="width: 205px; height: 132px; border-radius: 8px; background: #DDE1E4; border: 1px solid #EEF0F2; display: flex; align-items: center; justify-content: center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V4.6l4.2 2.9a8 8 0 0 1 7.6 0L20 4.6V10a8 8 0 0 1-16 0z"/><path d="M9.2 11.6v.8"/><path d="M14.8 11.6v.8"/><path d="M12 14.4 10.5 15.4"/><path d="M12 14.4 13.5 15.4"/></svg>
+      </div>
+      <div style="width: 205px; height: 132px; border-radius: 8px; background: #DDE1E4; border: 1px solid #EEF0F2; display: flex; align-items: center; justify-content: center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V4.6l4.2 2.9a8 8 0 0 1 7.6 0L20 4.6V10a8 8 0 0 1-16 0z"/><path d="M9.2 11.6v.8"/><path d="M14.8 11.6v.8"/><path d="M12 14.4 10.5 15.4"/><path d="M12 14.4 13.5 15.4"/></svg>
+      </div>
+      <div style="width: 205px; height: 132px; border-radius: 8px; background: #DDE1E4; border: 1px solid #EEF0F2; display: flex; align-items: center; justify-content: center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V4.6l4.2 2.9a8 8 0 0 1 7.6 0L20 4.6V10a8 8 0 0 1-16 0z"/><path d="M9.2 11.6v.8"/><path d="M14.8 11.6v.8"/><path d="M12 14.4 10.5 15.4"/><path d="M12 14.4 13.5 15.4"/></svg>
+      </div>
+    </div>
+
+    <div style="flex: 1;"></div>
+  </div>
+
+  <!-- 우측 정보 열: 앱에서 사진 밑에 길게 쌓여 있던 이름·배지·기록·댓글을 한 열로 세워 옆에 붙였다 -->
+  <div style="position: absolute; right: 0; top: 64px; bottom: 0; width: 520px; background: #FFFFFF; border-left: 1px solid #EEF0F2; display: flex; flex-direction: column;">
+
+    <div style="padding: 24px 24px 0; flex-shrink: 0;">
+
+      <!-- 번호판과 이름이 이 화면의 주인공이라 가장 크게 -->
+      <div style="height: 48px; display: flex; align-items: center; gap: 14px;">
+        <div style="width: 52px; height: 44px; border-radius: 4px; background: #FFC800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 600; color: #12243D;">12</span>
+        </div>
+        <h1 style="margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.8px; line-height: 40px; color: #1A1D21;">치즈</h1>
+      </div>
+
+      <span style="display: block; margin-top: 8px; height: 20px; font-size: 14px; color: #6E7781;">돌담길 화단 · 서울 성북구 동선동1가</span>
+
+      <!-- 좋아요는 이미 누른 상태라 채워서, 신고는 테두리만 -->
+      <div style="margin-top: 20px; display: flex; gap: 8px;">
+        <div style="flex: 1; height: 40px; border-radius: 8px; background: #12243D; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" stroke="none"><path d="M12 20.4 4.6 13a4.8 4.8 0 0 1 6.8-6.8l.6.6.6-.6A4.8 4.8 0 0 1 19.4 13z"/></svg>
+          <span style="font-size: 14px; font-weight: 700; color: #FFFFFF;">좋아요</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #FFFFFF;">129</span>
+        </div>
+        <div style="width: 120px; height: 40px; border: 1px solid #DDE1E4; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E7781" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4"/><path d="M6 5h11.4l-1.9 3.6 1.9 3.6H6"/></svg>
+          <span style="font-size: 14px; font-weight: 600; color: #6E7781;">신고</span>
+        </div>
+      </div>
+
+      <!-- 특징 배지. 노랑은 번호판과 LIVE에만 쓰므로 여기 랜드마크 배지는 남색 -->
+      <div style="margin-top: 20px; display: flex; align-items: center; gap: 6px;">
+        <span style="height: 30px; padding: 0 10px; border-radius: 4px; background: #12243D; font-size: 12px; font-weight: 700; color: #FFFFFF; display: inline-flex; align-items: center; white-space: nowrap;">랜드마크 12</span>
+        <span style="height: 30px; padding: 0 10px; border-radius: 4px; background: #F7F8F9; font-size: 12px; font-weight: 500; color: #1A1D21; display: inline-flex; align-items: center; white-space: nowrap;">치즈태비</span>
+        <span style="height: 30px; padding: 0 10px; border-radius: 4px; background: #F7F8F9; font-size: 12px; font-weight: 500; color: #1A1D21; display: inline-flex; align-items: center; white-space: nowrap;">사람을 잘 따름</span>
+        <span style="height: 30px; padding: 0 10px; border-radius: 4px; background: #F7F8F9; font-size: 12px; font-weight: 500; color: #1A1D21; display: inline-flex; align-items: center; white-space: nowrap;">TNR 완료</span>
+      </div>
+
+      <!-- 기록 3칸: 값을 크게, 라벨은 작게 -->
+      <div style="margin-top: 20px; display: flex; border-top: 1px solid #EEF0F2; border-bottom: 1px solid #EEF0F2;">
+        <div style="flex: 1 1 0; min-width: 0; padding: 16px 0; display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 12px; color: #9AA1A9;">첫 등록</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #1A1D21;">2026.03.11</span>
+        </div>
+        <div style="width: 1px; background: #EEF0F2;"></div>
+        <div style="flex: 1 1 0; min-width: 0; padding: 16px 0 16px 16px; display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 12px; color: #9AA1A9;">최근 목격</span>
+          <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.2px; color: #1A1D21;">2시간 전</span>
+        </div>
+        <div style="width: 1px; background: #EEF0F2;"></div>
+        <div style="flex: 1 1 0; min-width: 0; padding: 16px 0 16px 16px; display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 12px; color: #9AA1A9;">등록자</span>
+          <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.2px; color: #1A1D21;">냥냥이</span>
+        </div>
+      </div>
+
+      <!-- 지금 나와 있다는 소식 한 줄. 이 화면의 두 번째이자 마지막 노랑 -->
+      <div style="margin-top: 20px; height: 56px; border-radius: 8px; background: #F7F8F9; padding: 0 12px; display: flex; align-items: center; gap: 10px;">
+        <span style="height: 22px; padding: 0 7px; border-radius: 4px; background: #FFC800; font-size: 11px; font-weight: 700; letter-spacing: 0.4px; color: #12243D; display: inline-flex; align-items: center; flex-shrink: 0;">LIVE</span>
+        <span style="flex: 1; min-width: 0; font-size: 14px; color: #1A1D21;">치즈가 지금 화단에 나와 있어요</span>
+        <div style="height: 40px; padding: 0 18px; border-radius: 8px; background: #12243D; display: flex; align-items: center; flex-shrink: 0;">
+          <span style="font-size: 14px; font-weight: 700; color: #FFFFFF;">보기</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px; height: 1px; background: #EEF0F2; flex-shrink: 0;"></div>
+
+    <!-- 댓글: 데스크톱은 세로가 남아 앱보다 한 개 더 보여준다 -->
+    <div style="height: 44px; padding: 0 24px; display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+      <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.3px; color: #1A1D21;">댓글</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #6E7781;">24</span>
+    </div>
+
+    <div style="padding: 16px 24px; border-top: 1px solid #EEF0F2; display: flex; gap: 12px; flex-shrink: 0;">
+      <div style="width: 36px; height: 36px; border-radius: 8px; background: #DDE1E4; flex-shrink: 0;"></div>
+      <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: #1A1D21;">골목대장</span>
+          <span style="font-size: 12px; color: #9AA1A9;">1시간 전</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #6E7781;">오늘 아침에도 화단 앞에 앉아 있었어요. 사료는 급식소에만 놓아 주세요.</p>
+      </div>
+    </div>
+
+    <div style="padding: 16px 24px; border-top: 1px solid #EEF0F2; display: flex; gap: 12px; flex-shrink: 0;">
+      <div style="width: 36px; height: 36px; border-radius: 8px; background: #DDE1E4; flex-shrink: 0;"></div>
+      <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: #1A1D21;">삼색이집사</span>
+          <span style="font-size: 12px; color: #9AA1A9;">어제</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #6E7781;">귀 끝 보니 중성화 마친 아이 맞네요.</p>
+      </div>
+    </div>
+
+    <div style="padding: 16px 24px; border-top: 1px solid #EEF0F2; display: flex; gap: 12px; flex-shrink: 0;">
+      <div style="width: 36px; height: 36px; border-radius: 8px; background: #DDE1E4; flex-shrink: 0;"></div>
+      <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: #1A1D21;">밤산책</span>
+          <span style="font-size: 12px; color: #9AA1A9;">2일 전</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #6E7781;">밤에 지나갈 때 담 위에서 내려다보고 있었어요.</p>
+      </div>
+    </div>
+
+    <div style="flex: 1;"></div>
+
+    <!-- 입력창은 열 맨 아래에 고정 -->
+    <div style="padding: 16px 24px 24px; border-top: 1px solid #EEF0F2; display: flex; gap: 8px; flex-shrink: 0;">
+      <div style="flex: 1; min-width: 0; height: 40px; border: 1px solid #EEF0F2; border-radius: 8px; background: #F7F8F9; padding: 0 12px; display: flex; align-items: center;">
+        <span style="font-size: 14px; color: #9AA1A9;">댓글 남기기</span>
+      </div>
+      <div style="height: 40px; padding: 0 18px; border-radius: 8px; background: #12243D; display: flex; align-items: center; flex-shrink: 0;">
+        <span style="font-size: 14px; font-weight: 700; color: #FFFFFF;">전송</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 신고 모달에 시선을 모으는 남색 반투명 오버레이. 뒤에는 고양이 프로필이 그대로 깔린다 -->
+  <div style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgba(18, 36, 61, 0.6);"></div>
+
+  <!-- 앱에서는 하단 시트였다. 웹은 화면 중앙 모달 540x659, 위아래 120px씩 남는다 -->
+  <div style="position: absolute; left: 450px; top: 120px; width: 540px; height: 659px; border-radius: 8px; background: #FFFFFF; box-shadow: 0 8px 32px rgba(11, 25, 48, 0.24); overflow: hidden; display: flex; flex-direction: column;">
+
+    <!-- 제목과 신고 대상. 대상 번호판에만 노랑을 쓴다 -->
+    <div style="padding: 20px 24px 16px; flex-shrink: 0;">
+      <div style="height: 40px; display: flex; align-items: center; gap: 12px;">
+        <span style="flex: 1; min-width: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #1A1D21;">이 게시물 신고</span>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: #F7F8F9; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1D21" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></svg>
+        </div>
+      </div>
+      <div style="margin-top: 8px; height: 22px; display: flex; align-items: center; gap: 8px;">
+        <div style="height: 22px; border-radius: 4px; background: #FFC800; padding: 0 8px; display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+          <span style="font-size: 11px; font-weight: 700; color: #12243D;">랜드마크</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: #12243D;">12</span>
+        </div>
+        <span style="font-size: 13px; color: #6E7781;">치즈 · 등록자 냥냥이</span>
+      </div>
+    </div>
+
+    <div style="height: 1px; background: #EEF0F2; flex-shrink: 0;"></div>
+
+    <!-- 사유 단일 선택. 어미를 전부 '-ㅁ' 서술형으로 맞추고 부가 설명을 5개 모두 넣었다 -->
+    <div style="display: flex; flex-direction: column; flex-shrink: 0;">
+
+      <div style="height: 56px; padding: 0 24px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #EEF0F2; background: #F7F8F9;">
+        <div style="width: 22px; height: 22px; border-radius: 11px; border: 2px solid #12243D; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+          <div style="width: 10px; height: 10px; border-radius: 5px; background: #12243D;"></div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.2px; line-height: 20px; color: #12243D;">고양이 사진이 아님</span>
+          <span style="font-size: 12px; line-height: 16px; color: #6E7781;">다른 동물이나 사물, 무관한 사진</span>
+        </div>
+      </div>
+
+      <div style="height: 56px; padding: 0 24px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #EEF0F2; background: #FFFFFF;">
+        <div style="width: 22px; height: 22px; border-radius: 11px; border: 2px solid #DDE1E4; flex-shrink: 0;"></div>
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.2px; line-height: 20px; color: #1A1D21;">학대나 위협이 의심됨</span>
+          <span style="font-size: 12px; line-height: 16px; color: #6E7781;">폭력, 위협, 유기 정황</span>
+        </div>
+      </div>
+
+      <div style="height: 56px; padding: 0 24px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #EEF0F2; background: #FFFFFF;">
+        <div style="width: 22px; height: 22px; border-radius: 11px; border: 2px solid #DDE1E4; flex-shrink: 0;"></div>
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.2px; line-height: 20px; color: #1A1D21;">위치 정보가 잘못됨</span>
+          <span style="font-size: 12px; line-height: 16px; color: #6E7781;">실제 목격 장소와 다른 위치</span>
+        </div>
+      </div>
+
+      <div style="height: 56px; padding: 0 24px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #EEF0F2; background: #FFFFFF;">
+        <div style="width: 22px; height: 22px; border-radius: 11px; border: 2px solid #DDE1E4; flex-shrink: 0;"></div>
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.2px; line-height: 20px; color: #1A1D21;">개인정보가 노출됨</span>
+          <span style="font-size: 12px; line-height: 16px; color: #6E7781;">주소, 차량 번호, 얼굴</span>
+        </div>
+      </div>
+
+      <div style="height: 56px; padding: 0 24px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #EEF0F2; background: #FFFFFF;">
+        <div style="width: 22px; height: 22px; border-radius: 11px; border: 2px solid #DDE1E4; flex-shrink: 0;"></div>
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.2px; line-height: 20px; color: #1A1D21;">스팸이거나 홍보로 보임</span>
+          <span style="font-size: 12px; line-height: 16px; color: #6E7781;">광고, 반복 게시물</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 선택 항목이라 사유 목록보다 낮게 잡았다 -->
+    <div style="padding: 20px 24px 0; display: flex; flex-direction: column; gap: 8px; flex-shrink: 0;">
+      <span style="height: 18px; font-size: 13px; font-weight: 700; line-height: 18px; color: #1A1D21;">상세 내용 (선택)</span>
+      <div style="height: 76px; border: 1px solid #DDE1E4; border-radius: 8px; background: #FFFFFF; padding: 12px 16px;">
+        <span style="font-size: 14px; line-height: 1.5; color: #9AA1A9;">검토에 도움이 될 내용을 적어주세요</span>
+      </div>
+    </div>
+
+    <div style="padding: 16px 24px 0; flex-shrink: 0;">
+      <div style="height: 42px; border-radius: 8px; background: #F7F8F9; padding: 12px 16px;">
+        <span style="display: block; font-size: 12px; line-height: 18px; color: #6E7781;">신고는 익명으로 접수돼요. 허위 신고가 반복되면 신고 기능이 제한될 수 있어요.</span>
+      </div>
+    </div>
+
+    <!-- 주 동작인 신고 접수를 넓게 -->
+    <div style="padding: 20px 24px 24px; display: flex; gap: 12px; flex-shrink: 0;">
+      <div style="width: 120px; height: 48px; border: 1px solid #12243D; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 15px; font-weight: 700; color: #12243D;">취소</span>
+      </div>
+      <div style="flex: 1; height: 48px; border-radius: 8px; background: #12243D; display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 15px; font-weight: 800; color: #FFFFFF;">신고 접수</span>
+      </div>
+    </div>
+
+  </div>
+</div></body></html>

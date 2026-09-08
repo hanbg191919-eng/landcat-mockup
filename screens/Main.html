@@ -1,0 +1,193 @@
+<!doctype html><html><head><meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: 'Gothic A1', 'Apple SD Gothic Neo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    a { color: #12243D; text-decoration: none; }
+    a:hover { color: #0B1930; }
+  </style>
+<style>html,body{margin:0;padding:0;background:#fff}</style></head><body><div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #FFFFFF;">
+
+  <!-- 상단 44px는 기기 상태바 자리라 비워둔다. 상단바와 이어 보이게 남색만 깔았다. -->
+  <div style="position: absolute; left: 0; right: 0; top: 0; height: 44px; background: #12243D;"></div>
+
+  <!-- 남색 상단바 56px: 서비스명은 짧아서 검색 입력 옆에 두고, 검색이 폭을 최대한 가져간다. -->
+  <div style="position: absolute; left: 0; right: 0; top: 44px; height: 56px; background: #12243D; display: flex; align-items: center; padding: 0 8px 0 20px; gap: 10px;">
+    <span style="font-size: 11px; font-weight: 800; letter-spacing: 2px; color: #FFC800;">LANDCAT</span>
+    <div style="flex-grow: 1; height: 44px; background: #FFFFFF; border-radius: 8px; display: flex; align-items: center; padding: 0 12px; gap: 8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+      <span style="font-size: 13px; font-weight: 400; color: #6E7781;">장소나 고양이 이름 검색</span>
+    </div>
+    <!-- 현재 위치 버튼: 아이콘은 20px지만 44px 컨테이너로 감싸 터치 영역을 확보했다. -->
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+    </div>
+  </div>
+
+  <!-- 필터 세그먼트: 행 자체가 52px, 각 칸이 44px라 터치 영역을 만족한다. -->
+  <div style="position: absolute; left: 0; right: 0; top: 100px; height: 52px; background: #FFFFFF; border-bottom: 1px solid #EEF0F2; display: flex; align-items: center; gap: 8px; padding: 0 20px;">
+    <div style="flex-grow: 1; height: 44px; border-radius: 8px; background: #12243D; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 14px; font-weight: 700; color: #FFFFFF;">전체</span>
+    </div>
+    <div style="flex-grow: 1; height: 44px; border-radius: 8px; background: #F7F8F9; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 14px; font-weight: 500; color: #6E7781;">라이브</span>
+    </div>
+    <div style="flex-grow: 1; height: 44px; border-radius: 8px; background: #F7F8F9; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 14px; font-weight: 500; color: #6E7781;">랜드마크</span>
+    </div>
+  </div>
+
+  <!-- 지도 자리표시. 실제 타일이 아니라 도로·블록만 그린 그림이다. -->
+  <div style="position: absolute; left: 0; right: 0; top: 152px; bottom: 82px; background: #E8EBED; overflow: hidden;">
+    <svg width="390" height="610" viewBox="0 0 390 610" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+      <rect width="390" height="610" fill="#E8EBED"/>
+      <rect x="8" y="8" width="106" height="122" fill="#DDE1E4"/>
+      <rect x="150" y="-12" width="132" height="142" fill="#DDE1E4"/>
+      <rect x="296" y="16" width="104" height="114" fill="#DDE1E4"/>
+      <rect x="6" y="176" width="108" height="162" fill="#DDE1E4"/>
+      <rect x="152" y="176" width="126" height="92" fill="#DDE1E4"/>
+      <rect x="316" y="176" width="90" height="162" fill="#DDE1E4"/>
+      <rect x="18" y="392" width="98" height="126" fill="#DDE1E4"/>
+      <rect x="150" y="388" width="122" height="70" fill="#DDE1E4"/>
+      <rect x="300" y="392" width="102" height="118" fill="#DDE1E4"/>
+      <rect x="14" y="556" width="102" height="70" fill="#DDE1E4"/>
+      <rect x="150" y="500" width="126" height="126" fill="#DDE1E4"/>
+      <rect x="148" y="286" width="132" height="66" fill="#DCE4DE"/>
+      <g stroke="#FFFFFF" stroke-linecap="butt">
+        <path d="M0 150h390" stroke-width="18"/>
+        <path d="M0 362h390" stroke-width="10"/>
+        <path d="M0 542h390" stroke-width="9"/>
+        <path d="M132 0v610" stroke-width="16"/>
+        <path d="M292 130v480" stroke-width="9"/>
+        <path d="M132 470c58 14 96-16 150-6s70 22 108 14" stroke-width="8"/>
+        <path d="M62 150v212" stroke-width="6"/>
+        <path d="M0 232h390" stroke-width="7"/>
+        <path d="M212 232v130" stroke-width="6"/>
+      </g>
+      <rect x="8" y="240" width="46" height="98" fill="#DDE1E4"/>
+      <rect x="152" y="240" width="52" height="28" fill="#DDE1E4"/>
+      <rect x="222" y="240" width="56" height="28" fill="#DDE1E4"/>
+      <rect x="300" y="176" width="90" height="50" fill="#DDE1E4"/>
+    </svg>
+
+    <!-- 마커는 지도 영역 위쪽 177px 안에만 둔다. 그 아래는 하단 시트에 가린다. -->
+    <div style="position: absolute; top: 20px; left: 40px; width: 44px; height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div style="width: 36px; height: 28px; border-radius: 4px; background: #12243D; display: flex; align-items: center; justify-content: center;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; color: #FFFFFF;">8</span>
+      </div>
+      <svg width="36" height="8" viewBox="0 0 36 8" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;"><path d="M12 0h12l-6 7z" fill="#12243D"/></svg>
+    </div>
+
+    <div style="position: absolute; top: 58px; left: 286px; width: 44px; height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div style="width: 36px; height: 28px; border-radius: 4px; background: #12243D; display: flex; align-items: center; justify-content: center;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; color: #FFFFFF;">17</span>
+      </div>
+      <svg width="36" height="8" viewBox="0 0 36 8" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;"><path d="M12 0h12l-6 7z" fill="#12243D"/></svg>
+    </div>
+
+    <!-- 선택된 랜드마크: 노랑 번호판 + 꼬리. 아래 끝이 162px라 시트(177px)에 닿지 않는다. -->
+    <div style="position: absolute; top: 104px; left: 167px; width: 56px; display: flex; flex-direction: column; align-items: center;">
+      <div style="width: 56px; height: 48px; border-radius: 4px; background: #FFC800; display: flex; align-items: center; justify-content: center;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 600; color: #12243D;">12</span>
+      </div>
+      <svg width="56" height="10" viewBox="0 0 56 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;"><path d="M20 0h16l-8 9z" fill="#FFC800"/></svg>
+    </div>
+  </div>
+
+  <!-- 하단 시트: 탭바(82px) 바로 위에 붙이고 지도 위로 올라온다. -->
+  <div style="position: absolute; left: 0; right: 0; bottom: 82px; background: #FFFFFF; border-radius: 8px 8px 0 0; box-shadow: 0 -2px 12px rgba(18,36,61,0.08); display: flex; flex-direction: column;">
+
+    <div style="height: 16px; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 36px; height: 4px; border-radius: 4px; background: #DDE1E4;"></div>
+    </div>
+
+    <!-- 장소 머리글은 화면에서 제일 중요해서 높이·글자 모두 크게 잡았다. -->
+    <div style="height: 72px; display: flex; align-items: center; gap: 12px; padding: 0 20px;">
+      <div style="width: 44px; height: 44px; border-radius: 4px; background: #FFC800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; color: #12243D;">12</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 2px;">
+        <span style="font-size: 22px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; color: #1A1D21;">돌담길 화단</span>
+        <span style="font-size: 13px; font-weight: 400; color: #6E7781;">서울 성북구 동선동1가 · 고양이 3마리</span>
+      </div>
+    </div>
+
+    <div style="height: 1px; background: #EEF0F2;"></div>
+
+    <!-- 첫 행은 대표 고양이라 한 줄 더 붙이고 높이도 키웠다(균일 반복 회피). -->
+    <div style="height: 68px; display: flex; align-items: center; gap: 12px; padding: 0 20px; border-bottom: 1px solid #EEF0F2;">
+      <div style="width: 44px; height: 44px; border-radius: 4px; background: #DDE1E4; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 9V3.6L9 6.3"/><path d="M19.2 9V3.6L15 6.3"/><path d="M4.8 9c0 6 3.2 9.6 7.2 9.6S19.2 15 19.2 9"/><path d="M9.4 11.6h.01"/><path d="M14.6 11.6h.01"/><path d="M11 14.6h2"/></svg>
+      </div>
+      <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px;">
+        <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.2px; color: #1A1D21;">치즈</span>
+        <span style="font-size: 13px; font-weight: 400; color: #6E7781;">치즈태비 · 사람을 잘 따름</span>
+        <span style="font-size: 12px; font-weight: 400; color: #9AA1A9;">2시간 전 목격</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7.5-4.7-7.5-10A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7.5 3c0 5.3-7.5 10-7.5 10z"/></svg>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #1A1D21;">129</span>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 5l7 7-7 7"/></svg>
+    </div>
+
+    <div style="height: 64px; display: flex; align-items: center; gap: 12px; padding: 0 20px; border-bottom: 1px solid #EEF0F2;">
+      <div style="width: 44px; height: 44px; border-radius: 4px; background: #DDE1E4; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 9V3.6L9 6.3"/><path d="M19.2 9V3.6L15 6.3"/><path d="M4.8 9c0 6 3.2 9.6 7.2 9.6S19.2 15 19.2 9"/><path d="M9.4 11.6h.01"/><path d="M14.6 11.6h.01"/><path d="M11 14.6h2"/></svg>
+      </div>
+      <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.2px; color: #1A1D21;">먹구름</span>
+          <span style="height: 20px; padding: 0 6px; border-radius: 4px; background: #12243D; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: #FFFFFF; display: flex; align-items: center;">LIVE</span>
+        </div>
+        <span style="font-size: 13px; font-weight: 400; color: #6E7781;">회색 고등어 · 겁이 많음</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7.5-4.7-7.5-10A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7.5 3c0 5.3-7.5 10-7.5 10z"/></svg>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #1A1D21;">64</span>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 5l7 7-7 7"/></svg>
+    </div>
+
+    <div style="height: 64px; display: flex; align-items: center; gap: 12px; padding: 0 20px; border-bottom: 1px solid #EEF0F2;">
+      <div style="width: 44px; height: 44px; border-radius: 4px; background: #DDE1E4; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 9V3.6L9 6.3"/><path d="M19.2 9V3.6L15 6.3"/><path d="M4.8 9c0 6 3.2 9.6 7.2 9.6S19.2 15 19.2 9"/><path d="M9.4 11.6h.01"/><path d="M14.6 11.6h.01"/><path d="M11 14.6h2"/></svg>
+      </div>
+      <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px;">
+        <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.2px; color: #1A1D21;">양말이</span>
+        <span style="font-size: 13px; font-weight: 400; color: #6E7781;">턱시도 · 3일 전 목격</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7.5-4.7-7.5-10A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7.5 3c0 5.3-7.5 10-7.5 10z"/></svg>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #1A1D21;">31</span>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 5l7 7-7 7"/></svg>
+    </div>
+
+    <div style="padding: 10px 20px 14px;">
+      <div style="height: 52px; border-radius: 8px; background: #12243D; display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 15px; font-weight: 700; color: #FFFFFF;">이 위치에 고양이 등록</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 하단 탭바 82px = 콘텐츠 62px + 하단 패딩 20px. 활성은 지도. -->
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 82px; background: #FFFFFF; border-top: 1px solid #EEF0F2; display: flex; padding-bottom: 20px;">
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#12243D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5l6-2.5 6 2.5 6-2.5v15l-6 2.5-6-2.5-6 2.5z"/><path d="M9 4v15M15 6.5v15"/></svg>
+      <span style="font-size: 11px; font-weight: 700; color: #12243D;">지도</span>
+    </div>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><path d="M7.2 7.2a6.8 6.8 0 0 0 0 9.6M16.8 16.8a6.8 6.8 0 0 0 0-9.6"/></svg>
+      <span style="font-size: 11px; font-weight: 400; color: #9AA1A9;">라이브</span>
+    </div>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9.5L4 20z"/></svg>
+      <span style="font-size: 11px; font-weight: 400; color: #9AA1A9;">커뮤니티</span>
+    </div>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c0-3.6 3.4-5.6 7.5-5.6s7.5 2 7.5 5.6"/></svg>
+      <span style="font-size: 11px; font-weight: 400; color: #9AA1A9;">마이</span>
+    </div>
+  </div>
+</div></body></html>

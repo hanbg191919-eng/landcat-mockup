@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: 'Gothic A1', 'Apple SD Gothic Neo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    a { color: #12243D; text-decoration: none; }
+    a:hover { color: #0B1930; }
+  </style>
+<style>html,body{margin:0;padding:0;background:#fff}</style></head><body><!-- 카메라 화면이라 바탕은 남색을 더 어둡게 변형한 톤. 새 색조는 만들지 않았다. -->
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #0B1930;">
+
+  <!-- 상단 44px는 기기 상태바 자리라 비워둔다. -->
+
+  <!-- 상단바 56px: 좌 닫기 44px, 가운데 제목, 우 단계 표시. -->
+  <div style="position: absolute; left: 0; right: 0; top: 44px; height: 56px; display: flex; align-items: center; padding: 0 8px;">
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </div>
+    <span style="flex-grow: 1; text-align: center; font-size: 17px; font-weight: 700; letter-spacing: -0.3px; color: #FFFFFF;">고양이 등록</span>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #FFFFFF;">1</span>
+      <span style="font-size: 13px; font-weight: 400; color: #6E7781; padding: 0 3px;">/</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #6E7781;">2</span>
+    </div>
+  </div>
+
+  <!-- 뷰파인더 자리표시 480px. 안내 바가 그 위에 얹힌다. -->
+  <div style="position: absolute; left: 0; right: 0; top: 100px; height: 480px; background: #0B1930; overflow: hidden;">
+
+    <!-- 앨범 진입이 없다는 제약을 첫 줄에서 알려준다. 반투명 남색 + 흰 글자. -->
+    <div style="position: absolute; left: 0; right: 0; top: 0; height: 40px; background: rgba(18,36,61,0.92); border-bottom: 1px solid rgba(255,255,255,0.14); display: flex; align-items: center; padding: 0 20px; gap: 8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 8h3l1.5-2.5h6L16.5 8h3v11h-15z"/><circle cx="12" cy="13" r="3.2"/></svg>
+      <span style="font-size: 13px; font-weight: 500; color: #FFFFFF;">카메라로 찍은 사진만 등록할 수 있어요</span>
+    </div>
+
+    <!-- 프레이밍 가이드 300x300. 안쪽 실루엣은 글자 없이 아주 옅게만. -->
+    <div style="position: absolute; left: 45px; top: 110px; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center;">
+      <svg width="150" height="160" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+        <g fill="#FFFFFF" fill-opacity="0.07">
+          <path d="M36 44 32 12l26 18z"/>
+          <path d="M84 44 88 12 62 30z"/>
+          <ellipse cx="60" cy="52" rx="30" ry="27"/>
+          <path d="M60 76c-20 0-30 22-30 54h60c0-32-10-54-30-54z"/>
+          <path d="M90 130c22 0 26-22 14-30-5-4-10 0-7 6 5 10-1 16-13 16z"/>
+        </g>
+      </svg>
+      <div style="position: absolute; top: 0; left: 0; width: 36px; height: 36px; border-top: 2px solid rgba(255,255,255,0.92); border-left: 2px solid rgba(255,255,255,0.92);"></div>
+      <div style="position: absolute; top: 0; right: 0; width: 36px; height: 36px; border-top: 2px solid rgba(255,255,255,0.92); border-right: 2px solid rgba(255,255,255,0.92);"></div>
+      <div style="position: absolute; bottom: 0; left: 0; width: 36px; height: 36px; border-bottom: 2px solid rgba(255,255,255,0.92); border-left: 2px solid rgba(255,255,255,0.92);"></div>
+      <div style="position: absolute; bottom: 0; right: 0; width: 36px; height: 36px; border-bottom: 2px solid rgba(255,255,255,0.92); border-right: 2px solid rgba(255,255,255,0.92);"></div>
+    </div>
+  </div>
+
+  <!-- 촬영 위치는 사람이 읽는 이름 한 줄만. 좌표는 쓰지 않는다. -->
+  <div style="position: absolute; left: 0; right: 0; top: 592px; height: 48px; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 20px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AA1A9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.4 7-11.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+    <span style="font-size: 13px; font-weight: 500; color: #FFFFFF;">돌담길 화단</span>
+  </div>
+
+  <!-- 모드 전환 2개. 각 탭이 44px라 터치 영역을 만족한다. -->
+  <div style="position: absolute; left: 0; right: 0; top: 640px; height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 20px;">
+    <div style="height: 44px; padding: 0 24px; border-radius: 8px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 14px; font-weight: 700; color: #FFFFFF;">사진</span>
+    </div>
+    <div style="height: 44px; padding: 0 24px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 14px; font-weight: 500; color: #9AA1A9;">라이브</span>
+    </div>
+  </div>
+
+  <!-- 셔터 줄: 앨범 버튼은 그리지 않는다. 좌측은 우측 버튼과 같은 크기의 빈 칸으로 균형만 맞춘다. -->
+  <div style="position: absolute; left: 0; right: 0; top: 688px; height: 132px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
+    <div style="width: 48px; height: 48px;"></div>
+    <div style="width: 76px; height: 76px; border-radius: 50%; border: 3px solid rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center;">
+      <div style="width: 58px; height: 58px; border-radius: 50%; background: #FFFFFF;"></div>
+    </div>
+    <div style="width: 48px; height: 48px; border-radius: 8px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 4.5 19.5 7.5 16.5 10.5"/><path d="M19.5 7.5H9.5a5 5 0 0 0 0 10h1"/><path d="M7.5 19.5 4.5 16.5 7.5 13.5"/><path d="M4.5 16.5h10a5 5 0 0 0 0-10h-1"/></svg>
+    </div>
+  </div>
+
+  <!-- 하단 세이프에어리어 24px: 탭바가 없는 화면이라 24px. -->
+</div></body></html>
